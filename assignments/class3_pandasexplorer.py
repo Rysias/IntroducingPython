@@ -38,6 +38,7 @@ def loadcsv(filestr: str) -> Optional[pd.DataFrame]:
     df.columns = df.columns.str.strip().str.lower()
     return df
 
+
 def check_python_version() -> None:
     """Checks the python version"""
     import sys
@@ -45,6 +46,7 @@ def check_python_version() -> None:
     if sys.version_info < (3, 10):
         print("Sorry, this program requires Python 3.10 or higher.")
         exit()
+
 
 def check_df(
     df: Optional[pd.DataFrame],
@@ -144,13 +146,17 @@ def list_rows(df: Optional[pd.DataFrame]) -> None:
         return
     print(f"This file has {len(df)} rows.")
 
+
 def list_incomplete_rows(df: pd.DataFrame) -> None:
     """Prints the number of rows in a dataframe."""
     df_ok = check_df(df)
     if not df_ok:
         return
     n_incomplete = df.isnull().sum(axis=1).sum()
-    print(f"This file has {n_incomplete} incomplete rows. ({n_incomplete/len(df)*100:.2f}%)")
+    print(
+        f"This file has {n_incomplete} incomplete rows. ({n_incomplete/len(df)*100:.2f}%)"
+    )
+
 
 def get_random_row(df: pd.DataFrame) -> None:
     """Prints a random row from a dataframe"""
@@ -159,6 +165,7 @@ def get_random_row(df: pd.DataFrame) -> None:
         return
     print("Here's a random row:")
     print(df.sample(1))
+
 
 AVAILABLE_COMMANDS = {
     "get col <column name>": get_column,
