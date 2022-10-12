@@ -38,6 +38,13 @@ def loadcsv(filestr: str) -> Optional[pd.DataFrame]:
     df.columns = df.columns.str.strip().str.lower()
     return df
 
+def check_python_version() -> None:
+    """Checks the python version"""
+    import sys
+
+    if sys.version_info < (3, 10):
+        print("Sorry, this program requires Python 3.10 or higher.")
+        exit()
 
 def check_df(
     df: Optional[pd.DataFrame],
@@ -170,6 +177,7 @@ implemented_commands = {k: v for k, v in AVAILABLE_COMMANDS.items() if v is not 
 
 
 def main():
+    check_python_version()
     print("### Welcome to the Pandas Explorer! ###")
     print("- Type 'help' for a list of commands.")
     print("- Type 'exit' to quit.")
