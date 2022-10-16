@@ -35,7 +35,7 @@ def check_df(
     rownum: Optional[int] = None,
     colname: Optional[str] = None,
 ) -> bool:
-    """Prints the length of a dataframe"""
+    """Check whether dataframe is loaded and row/column are valid"""
     if df is None:
         print("Sorry, you need to load a file first.")
         return False
