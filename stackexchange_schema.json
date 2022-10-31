@@ -1,0 +1,25 @@
+{
+    "Posts": {
+        "Id": "str",
+        "PostTypeId": "str",
+        "Tags": [
+            "str",
+            "TagList"
+        ],
+        "AnswerCount": "int",
+        "Body": [
+            "str",
+            "CleanHTML",
+            "ListURL"
+        ]
+    },
+    "Users": {
+        "Id": "str",
+        "Reputation": "int",
+        "CreationDate": "datetime",
+        "DisplayName": "str",
+        "Views": "int",
+        "UpVotes": "int",
+        "DownVotes": "int"
+    }
+}
