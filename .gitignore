@@ -4,6 +4,9 @@
 # Ignore data folder
 data/
 
+# Ignore html
+*.html
+
 
 # User defined 
 .DS_Store
